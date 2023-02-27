@@ -1,0 +1,10 @@
+{
+  //this code is only to remove console
+  //erase this if something to be rendered in browser
+  //"plugins" : [["tranform-remove-console",
+  //{"exclude" : ["error", "warn"]}]]
+  "presets": [
+      ["@babel/preset-env" , {"targets": {"node": "current"}}],
+      ["@babel/preset-react" ,{"runtime" : "automatic"}]
+  ]
+}
