@@ -1,10 +1,10 @@
 import React from 'react'
-import Logo from "../assets/img/swaplogo.png";
+import Logo from "../assets/img/swap-logo.png";
 import { Link } from "react-router-dom";
 
 const Title =() => (
   <a href="/">
-  <img className="h-18 w-20 p-2 mt-5" alt="logo" 
+  <img className="h-20 w-35 ml-2  top-0  " alt="logo" 
   src={Logo}
   />
   </a>
@@ -13,35 +13,32 @@ const Title =() => (
 
 const Header = () => {
   return (
-    <div className="flex items-center justify-between bg-gray-100 shadow-lg h-20">
+    <div className="flex items-center justify-between bg-white shadow-lg h-20 sticky top-0">
           <Title/>
         <div className="nav-items">
-          <ul className="flex  py-10 " >
-            <li className="px-2  text-base font-bold text-black hover:text-gray-500">
+          <div className="flex  py-10 " >
+            <button className="p-3  text-base font-bold text-black  hover:bg-green-200 rounded-full">
               <Link to="/">Home</Link>
-            </li>
+            </button>
             
-            <li className="px-2 text-base font-bold text-black hover:text-gray-500 ">
+            <button className="p-3 text-base font-bold text-black hover:bg-green-200 rounded-full ">
               <Link to="/about">About Us</Link>
-            </li>
+            </button>
+            
 
-            <li className="px-2 text-base font-bold text-black hover:text-gray-500">
+            <button className="p-3 text-base font-bold text-black  hover:bg-green-200 rounded-full">
               <Link to="/stations">Swap Stations</Link>
-            </li>
+            </button>
 
-            <li className="px-2 text-base font-bold text-black hover:text-gray-500">
+            <button className="p-3 text-base font-bold text-black  hover:bg-green-200 rounded-full">
               <Link to="/team"> The Team</Link>
-            </li>
+            </button>
 
-            <li className=" px-2  text-base font-bold text-black hover:text-gray-500">
-            <Link to="/cart">Cart</Link>
-            </li>
-
-            <li className="px-2 text-base font-bold text-black hover:text-gray-500">
+            <button className="p-3 text-base font-bold text-black mr-3  hover:bg-green-200 rounded-full">
               <Link to="/contact">Contact</Link>
-            </li>
+            </button>
 
-          </ul>
+          </div>
         </div>
       </div>
   )

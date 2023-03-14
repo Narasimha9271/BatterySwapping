@@ -5,7 +5,6 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Body from "./components/Body";
 import Contact from "./components/Contact";
-import Cart from "./components/Cart";
 import About from "./components/About";
 import SwapStations from "./components/SwapStations";
 import Team from "./components/Team";
@@ -39,10 +38,6 @@ const App=()=>{
                 {
                     path:"/contact",
                     element:<Contact />
-                },
-                {
-                    path:"/cart",
-                    element:<Cart />
                 },
                 {
                     path:"/team",
