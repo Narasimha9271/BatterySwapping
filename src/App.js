@@ -7,7 +7,7 @@ import Body from "./components/Body";
 import Contact from "./components/Contact";
 import About from "./components/About";
 import SwapStations from "./components/SwapStations";
-import Team from "./components/Team";
+import Authenticate from "./components/Authenticate";
 import { ChakraProvider } from "@chakra-ui/provider";
 import { theme } from "@chakra-ui/theme";
 
@@ -40,8 +40,8 @@ const appRouter = createBrowserRouter([
                 element: <Contact />,
             },
             {
-                path: "/team",
-                element: <Team />,
+                path: "/auth",
+                element: <Authenticate />,
             },
             {
                 path: "/stations",
