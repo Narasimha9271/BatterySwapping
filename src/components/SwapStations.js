@@ -22,6 +22,11 @@ import {
 import { useRef, useState } from "react";
 
 const center = { lat: 16.8367, lng: 81.538 };
+const center1 = { lat: 16.8367, lng: 81.538 };
+const center2 = { lat: 16.8367, lng: 81.538 };
+const center3 = { lat: 16.8367, lng: 81.538 };
+const center4 = { lat: 16.8367, lng: 81.538 };
+const center5 = { lat: 16.8367, lng: 81.538 };
 
 function SwapStations() {
     const { isLoaded } = useJsApiLoader({
@@ -86,7 +91,6 @@ function SwapStations() {
                     zoom={15}
                     mapContainerStyle={{ width: "100%", height: "100%" }}
                     options={{
-                        zoomControl: false,
                         streetViewControl: false,
                         mapTypeControl: false,
                         fullscreenControl: false,
@@ -94,6 +98,11 @@ function SwapStations() {
                     onLoad={(map) => setMap(map)}
                 >
                     <Marker position={center} />
+                    <Marker position={center1} />
+                    <Marker position={center2} />
+                    <Marker position={center3} />
+                    <Marker position={center4} />
+                    <Marker position={center5} />
                     {directionsResponse && (
                         <DirectionsRenderer directions={directionsResponse} />
                     )}
