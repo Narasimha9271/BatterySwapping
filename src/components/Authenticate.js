@@ -5,7 +5,7 @@ import AuthDetails from "./AuthDetails";
 
 const Authenticate = () => {
     return (
-        <div>
+        <div className="bg-slate-200">
             <SignIn />
             <SignUp />
             <AuthDetails />
