@@ -7,9 +7,10 @@ import Body from "./components/Body";
 import Contact from "./components/Contact";
 import About from "./components/About";
 import SwapStations from "./components/SwapStations";
-import Authenticate from "./components/Authenticate";
+import Login from "./components/Login";
 import { ChakraProvider } from "@chakra-ui/provider";
 import { theme } from "@chakra-ui/theme";
+import Signup from "./components/SignUp";
 
 const App = () => {
     return (
@@ -40,8 +41,12 @@ const appRouter = createBrowserRouter([
                 element: <Contact />,
             },
             {
-                path: "/auth",
-                element: <Authenticate />,
+                path: "/login",
+                element: <Login />,
+            },
+            {
+                path: "/signup",
+                element: <Signup />,
             },
             {
                 path: "/stations",

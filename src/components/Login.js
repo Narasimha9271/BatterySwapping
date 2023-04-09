@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
 
 import InputControl from "./InputControl";
 import { auth } from "../firebase";
 
-function Signup() {
+function Login() {
     const navigate = useNavigate();
     const [values, setValues] = useState({
-        name: "",
         email: "",
         pass: "",
     });
@@ -16,20 +15,17 @@ function Signup() {
     const [submitButtonDisabled, setSubmitButtonDisabled] = useState(false);
 
     const handleSubmission = () => {
-        if (!values.name || !values.email || !values.pass) {
+        if (!values.email || !values.pass) {
             setErrorMsg("Fill all fields");
             return;
         }
         setErrorMsg("");
 
         setSubmitButtonDisabled(true);
-        createUserWithEmailAndPassword(auth, values.email, values.pass)
+        signInWithEmailAndPassword(auth, values.email, values.pass)
             .then(async (res) => {
                 setSubmitButtonDisabled(false);
-                const user = res.user;
-                await updateProfile(user, {
-                    displayName: values.name,
-                });
+
                 navigate("/");
             })
             .catch((err) => {
@@ -37,41 +33,30 @@ function Signup() {
                 setErrorMsg(err.message);
             });
     };
-
     return (
         <div className=" h-full min-h-screen w-full flex justify-center items-center background: linear-gradient(to right, #9900ff, #cc80ff)">
             <div className=" min-w-[480px] h-fit w-fit bg-white shadow-[1px_1px_4px_rgba(0,0,0,0.2)] flex flex-col gap-[30px] p-[30px] rounded-[10px]">
-                <h1 className="text-4xl font-bold">Signup</h1>
+                <h1 className="text-4xl font-bold">Login</h1>
 
                 <InputControl
-                    label="Name"
-                    placeholder="Enter your name"
-                    onChange={(event) =>
-                        setValues((prev) => ({
-                            ...prev,
-                            name: event.target.value,
-                        }))
-                    }
-                />
-                <InputControl
                     label="Email"
-                    placeholder="Enter email address"
                     onChange={(event) =>
                         setValues((prev) => ({
                             ...prev,
                             email: event.target.value,
                         }))
                     }
+                    placeholder="Enter email address"
                 />
                 <InputControl
                     label="Password"
-                    placeholder="Enter password"
                     onChange={(event) =>
                         setValues((prev) => ({
                             ...prev,
                             pass: event.target.value,
                         }))
                     }
+                    placeholder="Enter Password"
                 />
 
                 <div className="flex flex-col gap-5">
@@ -79,20 +64,20 @@ function Signup() {
                         {errorMsg}
                     </b>
                     <button
-                        className="bg-[#9900ff] text-white font-[bold] text-base w-full transition-[100ms] cursor-pointer px-4 py-2.5 rounded-[5px] border-[none] disabled:bg-[gray] hover:bg-[#aa2aff] outline: none"
-                        onClick={handleSubmission}
+                        className="bg-[#9900ff] text-white font-[bold] text-base w-full transition-[100ms] cursor-pointer px-4 py-2.5 rounded-[5px] border-[none] disabled:bg-[gray]"
                         disabled={submitButtonDisabled}
+                        onClick={handleSubmission}
                     >
-                        Signup
+                        Login
                     </button>
-                    <p className=" font-bold text-black">
+                    <p className="font-bold text-black">
                         Already have an account ?{" "}
                         <span>
                             <Link
                                 className="font-[bold] text-[#9900ff] tracking-[1px] text-base no-underline"
-                                to="/login"
+                                to="/signup"
                             >
-                                Login
+                                Sign up
                             </Link>
                         </span>
                     </p>
@@ -102,4 +87,4 @@ function Signup() {
     );
 }
 
-export default Signup;
+export default Login;
