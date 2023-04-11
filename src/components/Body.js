@@ -4,7 +4,7 @@ import swapLogo from "../assets/img/swapping.gif";
 const Body = () => {
     return (
         <div>
-            <h1 className="text-6xl mt-5 text-center text-green-300">
+            <h1 className="text-6xl mt-5 text-center text-green-300 ">
                 Swapping made Fast
             </h1>
             <h1 className="text-3xl mt-7 mb-40 text-center text-green-300">
