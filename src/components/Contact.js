@@ -1,104 +1,105 @@
-import React, { useState } from "react";
-import ReCAPTCHA from "react-google-recaptcha";
+import React from "react";
 
-const ContactPage = () => {
-    const [formData, setFormData] = useState({
-        name: "",
-        email: "",
-        message: "",
-    });
-    const [recaptchaValue, setRecaptchaValue] = useState(null);
-
-    const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
-    };
-
-    const handleRecaptchaChange = (value) => {
-        setRecaptchaValue(value);
-    };
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        if (recaptchaValue) {
-            // Process the form data and recaptcha value
-            console.log("Form Data: ", formData);
-            console.log("reCAPTCHA Value: ", recaptchaValue);
-            // Reset the form data and recaptcha value
-            setFormData({ name: "", email: "", message: "" });
-            setRecaptchaValue(null);
-        } else {
-            alert("Please complete the reCAPTCHA challenge!");
-        }
-    };
-
+const Contact = () => {
     return (
-        <div className="bg-gray-100 min-h-screen flex items-center justify-center">
-            <div className="bg-white rounded-lg shadow-md max-w-md mx-auto p-8">
-                <h1 className="text-3xl font-semibold text-gray-800 mb-6">
-                    Contact Us
-                </h1>
-                <form className="space-y-4" onSubmit={handleSubmit}>
-                    <div className="flex flex-col">
-                        <label
-                            htmlFor="name"
-                            className="text-gray-600 font-semibold mb-1"
-                        >
-                            Your Name
-                        </label>
-                        <input
-                            className="border border-gray-300 px-3 py-2 rounded-md focus:outline-none focus:border-purple-500"
-                            id="name"
-                            type="text"
-                            name="name"
-                            value={formData.name}
-                            onChange={handleChange}
-                        />
-                    </div>
-                    <div className="flex flex-col">
-                        <label
-                            htmlFor="email"
-                            className="text-gray-600 font-semibold mb-1"
-                        >
-                            Your Email
-                        </label>
-                        <input
-                            className="border border-gray-300 px-3 py-2 rounded-md focus:outline-none focus:border-purple-500"
-                            id="email"
-                            type="email"
-                            name="email"
-                            value={formData.email}
-                            onChange={handleChange}
-                        />
-                    </div>
-                    <div className="flex flex-col">
-                        <label
-                            htmlFor="message"
-                            className="text-gray-600 font-semibold mb-1"
-                        >
-                            Your Message
-                        </label>
-                        <textarea
-                            className="border border-gray-300 px-3 py-2 rounded-md h-24 resize-none focus:outline-none focus:border-purple-500"
-                            id="message"
-                            name="message"
-                            value={formData.message}
-                            onChange={handleChange}
-                        ></textarea>
-                    </div>
-                    <ReCAPTCHA
-                        sitekey="YOUR_RECAPTCHA_SITE_KEY"
-                        onChange={handleRecaptchaChange}
-                    />
-                    <button
-                        className="bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded-lg w-full focus:outline-none"
-                        type="submit"
-                    >
-                        Send
-                    </button>
-                </form>
+        <div className=" ">
+            <div class="grid grid-cols-2 divide-x">
+                <div>
+                    <section className="bg-white dark:bg-gray-900">
+                        <div class="p-6 bg-slate-200 border-4 ">
+                            <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
+                                <h2 className=" mb-3 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">
+                                    Let's get Electric
+                                </h2>
+                                <h2 className=" mb-6 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">
+                                    Come say Hello
+                                </h2>
+                                <form action="#" className="space-y-8">
+                                    <div>
+                                        <label
+                                            for="name"
+                                            className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300 "
+                                        >
+                                            Your Name *
+                                        </label>
+                                        <input
+                                            type="text"
+                                            id="name"
+                                            className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+                                            placeholder="enter name"
+                                            required
+                                        />
+                                    </div>
+
+                                    <div>
+                                        <label
+                                            for="email"
+                                            className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                                        >
+                                            Your email *
+                                        </label>
+                                        <input
+                                            type="email"
+                                            id="email"
+                                            className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+                                            placeholder="name@gmail.com"
+                                            required
+                                        />
+                                    </div>
+                                    <div>
+                                        <label
+                                            for="subject"
+                                            className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                                        >
+                                            Subject *
+                                        </label>
+                                        <input
+                                            type="text"
+                                            id="subject"
+                                            className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+                                            placeholder="Let us know how we can help you"
+                                            required
+                                        />
+                                    </div>
+                                    <div className="sm:col-span-2">
+                                        <label
+                                            for="message"
+                                            className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"
+                                        >
+                                            Your message
+                                        </label>
+                                        <textarea
+                                            id="message"
+                                            rows="6"
+                                            className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                            placeholder="Leave a comment..."
+                                        ></textarea>
+                                        <div className="form-group form-check text-center mb-6">
+                                            <button
+                                                id="button"
+                                                type="submit"
+                                                className="bg-green-500 shadow-xl hover:bg-green-300 text-white font-bold rounded-full p-3 w-44  mt-20"
+                                            >
+                                                Submit
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div className=" bg-gray-200">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3818.7909901104695!2d81.53577551417995!3d16.836721822885618!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a37b360a16cea5f%3A0xdeeb3716c10f73d1!2sNATIONAL%20INSTITUTE%20OF%20TECHNOLOGY%20ANDHRA%20PRADESH!5e0!3m2!1sen!2sin!4v1677679161436!5m2!1sen!2sin"
+                        className=" mt-40 w-6/12 h-full absolute rounded-lg"
+                        frameborder="0"
+                        allowfullscreen
+                    ></iframe>
+                </div>
             </div>
         </div>
     );
 };
 
-export default ContactPage;
+export default Contact;
