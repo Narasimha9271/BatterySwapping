@@ -1,18 +1,22 @@
-import React from 'react'
+import React from "react";
+import ItemsContainer from "./ItemsContainer";
+import SocialIcons from "./SocialIcons";
+import { Icons } from "./Menus";
 
 const Footer = () => {
-  return (
-    <div className='flex bg-green-500 flex-wrap h-20 justify-between items-center font-sans  '>
-        <div className="flex flex-wrap items-center">
-        <div className='pl-4'>© 2023 Copyright </div>
-        <div><strong>Team Skee Pvt Ltd </strong></div>
-        <div>.All Rights Reserved</div>
-        </div>
-        <div className=''>
-        Privacy Policy
-        </div>
-    </div>
-  )
-}
+    return (
+        <footer className="bg-gray-900 text-white">
+            <ItemsContainer />
+            <div
+                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10
+      text-center pt-2 text-gray-400 text-sm pb-8"
+            >
+                <span>© 2023 Appy. All rights reserved.</span>
+                <span>Terms · Privacy Policy</span>
+                <SocialIcons Icons={Icons} />
+            </div>
+        </footer>
+    );
+};
 
-export default Footer
+export default Footer;

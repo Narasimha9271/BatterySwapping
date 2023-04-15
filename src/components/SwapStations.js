@@ -21,7 +21,14 @@ import {
 } from "@react-google-maps/api";
 import { useRef, useState } from "react";
 
-const center = { lat: 16.8367, lng: 81.538 };
+const center = { lat: 13.4475, lng: 77.58729 };
+const center1 = { lat: 18.98989, lng: 73.82457 };
+const center2 = { lat: 19.38861, lng: 72.75454 };
+const center3 = { lat: 28.62084, lng: 77.32637 };
+const center4 = { lat: 28.52124, lng: 77.1596 };
+const center5 = { lat: 28.63958, lng: 77.07955 };
+const center6 = { lat: 28.70045, lng: 77.76227 };
+const center7 = { lat: 28.73438, lng: 77.07288 };
 
 function SwapStations() {
     const { isLoaded } = useJsApiLoader({
@@ -82,11 +89,19 @@ function SwapStations() {
             <Box position="absolute" left={0} top={0} h="100%" w="100%">
                 {/* Google Map Box */}
                 <GoogleMap
-                    center={center}
+                    center={
+                        (center,
+                        center1,
+                        center2,
+                        center3,
+                        center4,
+                        center5,
+                        center6,
+                        center7)
+                    }
                     zoom={15}
                     mapContainerStyle={{ width: "100%", height: "100%" }}
                     options={{
-                        zoomControl: false,
                         streetViewControl: false,
                         mapTypeControl: false,
                         fullscreenControl: false,
@@ -94,6 +109,13 @@ function SwapStations() {
                     onLoad={(map) => setMap(map)}
                 >
                     <Marker position={center} />
+                    <Marker position={center1} />
+                    <Marker position={center2} />
+                    <Marker position={center3} />
+                    <Marker position={center4} />
+                    <Marker position={center5} />
+                    <Marker position={center6} />
+                    <Marker position={center7} />
                     {directionsResponse && (
                         <DirectionsRenderer directions={directionsResponse} />
                     )}
