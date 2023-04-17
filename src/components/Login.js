@@ -71,7 +71,7 @@ function Login() {
                         Login
                     </button>
                     <p className="font-bold text-black">
-                        Already have an account ?{" "}
+                        Create new account{" "}
                         <span>
                             <Link
                                 className="font-[bold] text-[#9900ff] tracking-[1px] text-base no-underline"
