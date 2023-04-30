@@ -4,7 +4,7 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Body from "./components/Body";
-import Contact from "./components/Contact";
+import Payment from "./components/Payment";
 import About from "./components/About";
 import SwapStations from "./components/SwapStations";
 import Login from "./components/Login";
@@ -37,8 +37,8 @@ const appRouter = createBrowserRouter([
             },
 
             {
-                path: "/contact",
-                element: <Contact />,
+                path: "/payment",
+                element: <Payment />,
             },
             {
                 path: "/login",
