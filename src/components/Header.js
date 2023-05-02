@@ -27,7 +27,7 @@ const Header = () => {
                     </button>
 
                     <button className="p-3 text-base font-bold text-black mr-3  hover:bg-green-300 rounded-3xl">
-                        <Link to="/contact">Contact</Link>
+                        <Link to="/payment">Payment</Link>
                     </button>
 
                     <button className="m-3 bg-blue-500  text-white font-semibold py-2 px-4 rounded-md hover:bg-white hover:border-blue-500 hover:text-blue-500 border border-blue-500 transition-colors duration-300">
