@@ -41,7 +41,7 @@ function Signup() {
     return (
         <div className="bg-gradient-to-r from-purple-900 to-purple-300 h-full min-h-screen w-full flex justify-center items-center background: linear-gradient(to right, #9900ff, #cc80ff)">
             <div className=" min-w-[480px] h-fit w-fit bg-white shadow-[1px_1px_4px_rgba(0,0,0,0.2)] flex flex-col gap-[30px] p-[30px] rounded-[10px]">
-                <h1 className="text-4xl font-bold">Signup</h1>
+                <h1 className="text-4xl font-bold">Sign up</h1>
 
                 <InputControl
                     label="Name"
