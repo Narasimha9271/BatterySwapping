@@ -36,7 +36,7 @@ const PaymentPage = () => {
 
     return (
         <div className="max-w-md mx-auto bg-gradient-to-r from-purple-900 to-purple-300">
-            <div className="mt-8 bg-white rounded-lg shadow-md">
+            <div className="mt-8 rounded-lg shadow-md">
                 <div className="px-6 py-4">
                     <h2 className="text-lg font-medium text-gray-800 mb-4">
                         Payment Details
@@ -76,10 +76,10 @@ const PaymentPage = () => {
                         </div>
                         <div className="mb-4">
                             <label
-                                htmlFor="cvc"
+                                htmlFor="cvv"
                                 className="block text-gray-700 font-medium mb-2"
                             >
-                                CVC
+                                CVV
                             </label>
                             <input
                                 type="tel"
