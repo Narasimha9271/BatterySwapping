@@ -6,7 +6,7 @@ function PaymentPage() {
     const [cardNumber, setCardNumber] = useState("");
     const [cardName, setCardName] = useState("");
     const [expiry, setExpiry] = useState("");
-    const [cvv, setCVV] = useState("");
+    const [cvc, setCVC] = useState("");
     const [focus, setFocus] = useState("");
 
     return (
@@ -22,7 +22,7 @@ function PaymentPage() {
                         number={cardNumber}
                         name={cardName}
                         expiry={expiry}
-                        cvv={cvv}
+                        cvc={cvc}
                         focused={focus}
                     />
                 </div>
@@ -86,25 +86,24 @@ function PaymentPage() {
                     <div className="w-2/5">
                         <label
                             className="block text-gray-700 font-bold mb-2"
-                            htmlFor="cvv"
+                            htmlFor="cvc"
                         >
-                            CVV
+                            CVC
                         </label>
                         <input
                             className="appearance-none border rounded py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
-                            id="cvv"
+                            id="cvc"
                             type="text"
-                            cvc
                             placeholder="XXX"
-                            value={cvv}
-                            onChange={(e) => setCVV(e.target.value)}
-                            onFocus={() => setFocus("cvv")}
+                            value={cvc}
+                            onChange={(e) => setCVC(e.target.value)}
+                            onFocus={() => setFocus("cvc")}
                             onBlur={() => setFocus("")}
                         />
                     </div>
                     <div className="w-1/5">
                         <Cards
-                            cvv={cvv}
+                            cvc={cvc}
                             focused={focus}
                             name={cardName}
                             expiry={expiry}
